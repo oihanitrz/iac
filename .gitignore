@@ -1,3 +1,4 @@
 main.config
 .terraform
 .terraform.lock.hcl
+terraform.tfvars
