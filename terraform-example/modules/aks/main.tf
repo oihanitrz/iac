@@ -2,8 +2,8 @@ resource "azurerm_kubernetes_cluster" "aks" {
   name                = var.cluster_name
   location            = var.location
   resource_group_name = var.resource_group_name
-  dns_prefix          = var.dns_prefix
   kubernetes_version  = var.kubernetes_version
+  dns_prefix = var.dns_prefix
 
   default_node_pool {
     name       = "default"
@@ -20,7 +20,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   }
 
   oms_agent {
-    log_analytics_workspace_id = azurerm_log_analytics_workspace.logs.id
+    log_analytics_workspace_id = var.log_analytics_workspace_id # azurerm_log_analytics_workspace.logs.id
   }
 
   tags = var.tags

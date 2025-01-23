@@ -14,13 +14,7 @@ variable "cluster_name" {
 }
 
 variable "dns_prefix" {
-  description = "DNS prefix pour le cluster AKS"
-  default     = "myakscluster"
-}
-
-variable "subscription_id" {
-  description = "Subscription ID"
-  default     = "xxx"
+  default     = "aks"
 }
 
 variable "node_count" {
@@ -33,14 +27,13 @@ variable "node_vm_size" {
   default     = "Standard_D2_v2"
 }
 
-variable "acr_name" {
-  description = "Nom du Container Registry"
-  default     = "myacr"
+variable "kubernetes_version" {
+  description = "Version de Kubernetes"
+  default     = "1.29.11"
 }
 
-variable "argocd_chart_version" {
-  description = "Version du chart Helm pour ArgoCD"
-  default     = "5.41.1"
+variable "log_analytics_workspace_id" {
+  default     = "xxx"
 }
 
 variable "tags" {

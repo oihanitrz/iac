@@ -1,0 +1,13 @@
+apiVersion: service/v1
+kind: Service
+metadata: 
+  label:
+    app: apache
+  name: apache
+spec: 
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+  selector:
+    app: apache
